@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".ui.CatalogActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/ib_cerrarsesiion_catalog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/common_full_open_on_phone"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OFERTAS"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ib_cerrarsesiion_catalog" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PRODUCTOS"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_productos_catalog"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView8">
+
+            <org.imaginativeworld.whynotimagecarousel.ImageCarousel
+                android:id="@+id/sld_ofertas_catalog"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                app:autoPlay="true"
+                app:autoPlayDelay="3000"
+                app:autoWidthFixing="true"
+                app:bottomShadowAlpha="0.0"
+                app:bottomShadowHeight="0dp"
+                app:captionMargin="0dp"
+
+                app:captionTextSize="14sp"
+                app:carouselBackground="#00000000"
+                app:carouselGravity="CENTER"
+
+                app:carouselPadding="0dp"
+                app:carouselPaddingBottom="0dp"
+
+                app:carouselPaddingEnd="0dp"
+
+                app:carouselPaddingStart="0dp"
+
+                app:carouselPaddingTop="0dp"
+                app:carouselType="BLOCK"
+                app:imageScaleType="centerCrop"
+                app:indicatorMargin="0dp"
+                app:infiniteCarousel="true"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:nextButtonId="@id/btn_next"
+                app:nextButtonLayout="@layout/next_button_layout"
+                app:nextButtonMargin="4dp"
+                app:previousButtonId="@id/btn_previous"
+
+                app:previousButtonLayout="@layout/previous_button_layout"
+                app:previousButtonMargin="4dp"
+
+                app:scaleOnScroll="false"
+                app:scalingFactor="0.15"
+                app:showBottomShadow="true"
+                app:showCaption="true"
+                app:showIndicator="true"
+                app:showNavigationButtons="false"
+                app:showTopShadow="true"
+                app:topShadowAlpha="0.0"
+                app:topShadowHeight="0dp"
+                app:touchToPause="true" />
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

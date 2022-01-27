@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppGame">
         <activity
+            android:name=".ui.CatalogActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.SignUpActivity"
             android:exported="false" />
         <activity
