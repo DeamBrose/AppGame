@@ -38,7 +38,8 @@
         android:layout_height="48dp"
         app:layout_constraintBottom_toBottomOf="@+id/iv_fotoperfil_signup"
         app:layout_constraintEnd_toEndOf="@+id/iv_fotoperfil_signup"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/textView7"
