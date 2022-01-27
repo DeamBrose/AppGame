@@ -2,6 +2,7 @@ package edu.pe.idat.appgame.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import edu.pe.idat.appgame.R
 
 class SignUpActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
