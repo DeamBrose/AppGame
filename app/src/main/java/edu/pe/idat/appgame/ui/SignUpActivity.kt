@@ -14,5 +14,5 @@ class SignUpActivity : AppCompatActivity() {
         supportActionBar?.hide()
     }
 
-    
+
 }
