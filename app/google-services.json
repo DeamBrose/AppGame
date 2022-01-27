@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "729874390764",
+    "project_id": "appgame-5e060",
+    "storage_bucket": "appgame-5e060.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:729874390764:android:6266ee7d9cf2ae09464fc9",
+        "android_client_info": {
+          "package_name": "edu.pe.idat.appgame"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "729874390764-d927tjlemujbn4c9vc0a7s82lnqvvak7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzXP8YenDNqh-X-EO9Cn5e69PHbg9ciNE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "729874390764-d927tjlemujbn4c9vc0a7s82lnqvvak7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
