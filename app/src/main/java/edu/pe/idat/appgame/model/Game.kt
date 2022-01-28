@@ -4,5 +4,6 @@ class Game(
     val name: String?,
     val description: String?,
     val edition: String?,
-    val precio: String?
+    val precio: String?,
+    val image: String
 )
