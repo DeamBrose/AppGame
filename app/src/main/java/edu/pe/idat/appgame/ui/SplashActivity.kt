@@ -23,7 +23,7 @@ class SplashActivity : AppCompatActivity() {
     private fun Splash(){
         CoroutineScope( Dispatchers.Main ).launch {
             delay( 3000L )
-            val intent = Intent( this@SplashActivity, LoginActivity::class.java )
+            val intent = Intent( this@SplashActivity, MainActivity::class.java )
             startActivity( intent )
             finish()
         }

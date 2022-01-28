@@ -22,6 +22,10 @@ class LoginActivity : AppCompatActivity() {
         binding.btnIniciarsesionLogin.setOnClickListener {
             SignIn()
         }
+        binding.ivRegresarLogin.setOnClickListener{
+            val intent = Intent( this, MainActivity::class.java )
+            startActivity( intent )
+        }
     }
     private fun SignIn(){
         val email = binding.tilCorreoLogin.text.toString()
@@ -30,8 +34,7 @@ class LoginActivity : AppCompatActivity() {
         FirebaseAuth.getInstance().signInWithEmailAndPassword( email, password )
             .addOnCompleteListener {
                 if( it.isSuccessful ){
-                    val intent = Intent( this, MainActivity::class.java )
-                    intent.addFlags( Intent.FLAG_ACTIVITY_CLEAR_TOP )
+                    val intent = Intent( this, CatalogActivity::class.java )
                     startActivity( intent )
                     toast( "Welcome to AppGame." )
                 }else{
