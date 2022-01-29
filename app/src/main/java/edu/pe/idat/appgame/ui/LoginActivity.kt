@@ -34,9 +34,17 @@ class LoginActivity : AppCompatActivity() {
         FirebaseAuth.getInstance().signInWithEmailAndPassword( email, password )
             .addOnCompleteListener {
                 if( it.isSuccessful ){
-                    val intent = Intent( this, CatalogActivity::class.java )
-                    startActivity( intent )
-                    toast( "Welcome to AppGame." )
+                    if( email == "emilio@gmail.com" ){
+                        val intent = Intent( this, NewGameActivity::class.java )
+                        intent.putExtra( "keyemail", email )
+                        startActivity( intent )
+                        toast( "Welcome Admin to AppGame." )
+                    }else{
+                        val intent = Intent( this, CatalogActivity::class.java )
+                        startActivity( intent )
+                        toast( "Welcome to AppGame." )
+                    }
+
                 }else{
                     toast( "Email or Password Incorrect." )
                 }
