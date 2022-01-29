@@ -27,9 +27,9 @@
                 android:id="@+id/iv_perfilimage_newgame"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:srcCompat="@tools:sample/avatars"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/avatars[0]" />
         </androidx.cardview.widget.CardView>
 
         <TextView
