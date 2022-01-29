@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import edu.pe.idat.appgame.R
-import edu.pe.idat.appgame.databinding.ActivityCatalogBinding
 import edu.pe.idat.appgame.databinding.ItemCardGameBinding
 import edu.pe.idat.appgame.model.Game
 
