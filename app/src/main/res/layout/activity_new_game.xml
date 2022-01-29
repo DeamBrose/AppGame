@@ -1,81 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_purple"
-    tools:context=".ui.NewGameActivity">
-
-    <ImageView
-        android:id="@+id/iv_perfilimage_newgame"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:fontFamily="@font/aldrich"
-        android:text="Hola, ADMIN"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_perfilimage_newgame"
-        app:layout_constraintStart_toEndOf="@+id/iv_perfilimage_newgame"
-        app:layout_constraintTop_toTopOf="@+id/iv_perfilimage_newgame" />
-
-    <ImageView
-        android:id="@+id/iv_cerrarsesion_newgame"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="180dp"
-        android:layout_height="160dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_perfilimage_newgame"
-        app:srcCompat="@drawable/admin" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/baloo"
-        android:text="AGREGAR \nNUEVOS JUEGOS"
-        android:textColor="@color/white"
-        android:textSize="28sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView5" />
+    android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/rounded_rectangle_shape"
-        android:padding="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_purple"
+        tools:context=".ui.NewGameActivity">
+
+        <ImageView
+            android:id="@+id/iv_perfilimage_newgame"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/aldrich"
+            android:text="Hola, ADMIN"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_perfilimage_newgame"
+            app:layout_constraintStart_toEndOf="@+id/iv_perfilimage_newgame"
+            app:layout_constraintTop_toTopOf="@+id/iv_perfilimage_newgame" />
+
+        <ImageView
+            android:id="@+id/iv_cerrarsesion_newgame"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_perfilimage_newgame"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_perfilimage_newgame"
+            app:srcCompat="@drawable/ic_logout" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="180dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_perfilimage_newgame"
+            app:srcCompat="@drawable/admin" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/baloo"
+            android:text="AGREGAR \nNUEVOS JUEGOS"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView5" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/rounded_rectangle_shape"
+            android:padding="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView5">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="1" />
+
+        <EditText
+            android:id="@+id/tv_edicion_newgame"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginRight="20dp"
+            android:ems="10"
+            android:fontFamily="@font/aldrich"
+            android:hint="Edicion"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textColor="#5C5275"
+            android:textColorHint="#5C5275"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_imgjuego_newgame"
+            app:layout_constraintTop_toTopOf="@+id/iv_imgjuego_newgame" />
 
         <ImageView
             android:id="@+id/iv_imgjuego_newgame"
             android:layout_width="140dp"
             android:layout_height="175dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="24dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/constraintLayout"
             app:srcCompat="@drawable/carousel_default_placeholder" />
+
+        <EditText
+            android:id="@+id/et_precio_newgame"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="20dp"
+            android:ems="10"
+            android:fontFamily="@font/aldrich"
+            android:hint="Precio"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textColor="#5C5275"
+            android:textColorHint="#5C5275"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_imgjuego_newgame"
+            app:layout_constraintTop_toBottomOf="@+id/tv_edicion_newgame" />
 
         <TextView
             android:id="@+id/tv_subirfoto_newgame"
@@ -92,7 +150,9 @@
             android:id="@+id/et_nombre_newgame"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="20dp"
             android:ems="10"
             android:fontFamily="@font/aldrich"
             android:hint="Nombre"
@@ -105,44 +165,12 @@
             app:layout_constraintTop_toBottomOf="@+id/iv_imgjuego_newgame" />
 
         <EditText
-            android:id="@+id/tv_edicion_newgame"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:ems="10"
-            android:fontFamily="@font/aldrich"
-            android:hint="Edicion"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:textColor="#5C5275"
-            android:textColorHint="#5C5275"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/iv_imgjuego_newgame"
-            app:layout_constraintTop_toTopOf="@+id/iv_imgjuego_newgame" />
-
-        <EditText
-            android:id="@+id/et_precio_newgame"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:ems="10"
-            android:fontFamily="@font/aldrich"
-            android:hint="Precio"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:textColor="#5C5275"
-            android:textColorHint="#5C5275"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/iv_imgjuego_newgame"
-            app:layout_constraintTop_toBottomOf="@+id/tv_edicion_newgame" />
-
-        <EditText
             android:id="@+id/et_descripcion_newgame"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="20dp"
             android:ems="10"
             android:fontFamily="@font/aldrich"
             android:hint="Descripción del juego..."
@@ -158,14 +186,14 @@
             android:id="@+id/btn_agregar_newgame"
             android:layout_width="170dp"
             android:layout_height="60dp"
+            android:layout_marginTop="32dp"
             android:backgroundTint="#740761"
             android:fontFamily="@font/aldrich"
             android:text="AGREGAR"
             app:cornerRadius="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/et_descripcion_newgame" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
