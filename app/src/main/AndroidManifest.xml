@@ -13,7 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppGame">
         <activity
+            android:name=".ui.GameDescripctionActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.SplashActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".ui.NewGameActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,9 +27,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ui.NewGameActivity"
-            android:exported="false" />
         <activity
             android:name=".ui.CatalogActivity"
             android:exported="false" />
@@ -35,7 +38,11 @@
             android:exported="false" />
         <activity
             android:name=".ui.MainActivity"
-            android:exported="false"/>
+            android:exported="false" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
