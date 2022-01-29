@@ -12,10 +12,13 @@ import edu.pe.idat.appgame.model.Game
 
 class AdaptadorGame(private val dataset: MutableList<Game>) :
 RecyclerView.Adapter<AdaptadorGame.ViewHolder>(){
-
     class ViewHolder(view: View): RecyclerView.ViewHolder(view){
         var binding:ActivityCatalogBinding= ActivityCatalogBinding.bind(view)
         var contexto: Context= view.context
+        fun enlazarGame(g:Game){
+            var vinculo=g.image.toString()
+            binding.
+        }
 
 
 

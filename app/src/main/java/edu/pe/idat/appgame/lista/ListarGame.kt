@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.storage.FirebaseStorage
 import edu.pe.idat.appgame.adaptador.AdaptadorGame
 import edu.pe.idat.appgame.databinding.ActivityCatalogBinding
 import edu.pe.idat.appgame.model.Game
@@ -30,11 +29,12 @@ class ListarGame : AppCompatActivity() {
             .get()
             .addOnSuccessListener { result ->
                 for (document in result){
-                var nombre = document.data["nombre"].toString()
-                var descripcion = document.data["descripcion"].toString()
-                var edicion = document.data["edicion"].toString()
+                var name = document.data["name"].toString()
+                var description = document.data["description"].toString()
+                var edition = document.data["edition"].toString()
                 var precio = document.data["precio"].toString()
-                var reg=Game(nombre, descripcion, edicion,precio)
+                var image = document.data["image"].toString()
+                var reg=Game(name, description,edition,precio,image)
                 games.add(reg)
                 }
                 adaptadorGame=  AdaptadorGame(games)

@@ -3,21 +3,18 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-<<<<<<< HEAD
-import edu.pe.idat.appgame.R
-import edu.pe.idat.appgame.databinding.ActivitySignUpBinding
 
-=======
+
+import edu.pe.idat.appgame.databinding.ActivitySignUpBinding
 import android.provider.MediaStore
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import edu.pe.idat.appgame.databinding.ActivitySignUpBinding
 import edu.pe.idat.appgame.model.Cliente
 import java.util.*
->>>>>>> main
+
 
 class SignUpActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignUpBinding
