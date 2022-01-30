@@ -9,6 +9,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.squareup.picasso.Picasso
 import edu.pe.idat.appgame.databinding.ActivityGameDescripctionBinding
+import java.lang.Exception
 
 class GameDescripctionActivity : AppCompatActivity() {
     private lateinit var binding:ActivityGameDescripctionBinding
@@ -44,6 +45,7 @@ class GameDescripctionActivity : AppCompatActivity() {
     }
 
     private fun GetDataGame( name: String ){
+        binding.progressBar2.visibility = View.VISIBLE
         if( name != "" ){
             database.collection( "Games" ).whereEqualTo( "name", name )
                 .get().addOnSuccessListener {
@@ -55,16 +57,24 @@ class GameDescripctionActivity : AppCompatActivity() {
                         val precio = data.data[ "precio" ]
 
                         if( image != null ){
-                            Picasso.get().load( image.toString() ).into( binding.ivGameimgGamedescripction )
-                            toast( "Foto Cargada..." )
+                            Picasso.get().load( image.toString() ).into( binding.ivGameimgGamedescripction, object: com.squareup.picasso.Callback{
+                                override fun onSuccess() {
+                                    binding.progressBar2.visibility = View.GONE
+                                    binding.ivGameimgGamedescripction.visibility = View.VISIBLE
+                                    binding.tv404Gamedescription.visibility = View.GONE
+                                    binding.textView11.visibility = View.GONE
+                                }
+                                override fun onError(e: Exception?) {
+                                    binding.ivGameimgGamedescripction.visibility = View.VISIBLE
+                                    binding.tv404Gamedescription.visibility = View.VISIBLE
+                                    binding.textView11.visibility = View.VISIBLE
+                                }
+                            })
                         }
                         binding.ivNombreGamedescripction.text = name.toString()
                         binding.tvEdicionGamedescripction.text = edition.toString()
                         binding.tvDescripcionGamedescripction.text = descripcion.toString()
                         binding.tvPrecioGamedescription.text = "S/$precio"
-
-                        binding.tv404Gamedescription.visibility = View.GONE
-                        binding.textView11.visibility = View.GONE
                     }
                 }
         }

@@ -13,6 +13,7 @@ import com.google.firebase.storage.StorageReference
 import com.squareup.picasso.Picasso
 import edu.pe.idat.appgame.databinding.ActivityNewGameBinding
 import edu.pe.idat.appgame.model.Game
+import edu.pe.idat.appgame.preferences.SharedPreferences
 import java.util.*
 
 class NewGameActivity : AppCompatActivity() {
@@ -21,20 +22,14 @@ class NewGameActivity : AppCompatActivity() {
     private lateinit var storage: StorageReference
 
     private var imgUri: Uri?=null
-    private var email: String?=""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityNewGameBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.hide()
-        val intent = this.intent
-        val extra = intent.extras
-        val correo = extra?.getString("keyemail")
-        email = correo
-
         Instances()
-        GetDataUser( email!! )
+        GetDataUser( SharedPreferences.constantes.getkey() )
         Listener()
 
     }
@@ -52,6 +47,8 @@ class NewGameActivity : AppCompatActivity() {
             binding.tvSubirfotoNewgame.visibility = View.INVISIBLE
         }
         binding.ivCerrarsesionNewgame.setOnClickListener {
+            SharedPreferences.constantes.saveCliente( "" )
+            SharedPreferences.constantes.savekey( "" )
             val intent = Intent( this, MainActivity::class.java )
             startActivity( intent )
             finish()
@@ -108,7 +105,11 @@ class NewGameActivity : AppCompatActivity() {
                 binding.progressBar.visibility = View.INVISIBLE
                 binding.btnAgregarNewgame.visibility = View.VISIBLE
             }
-            .addOnFailureListener { toast( "Error con el registro." ) }
+            .addOnFailureListener {
+                toast( "Error con el registro." )
+                binding.progressBar.visibility = View.INVISIBLE
+                binding.btnAgregarNewgame.visibility = View.VISIBLE
+            }
     }
 
     private fun OpenGallery(){

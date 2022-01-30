@@ -21,10 +21,12 @@ class MainActivity : AppCompatActivity() {
         binding.btnregistrar.setOnClickListener {
             val intent = Intent( this, SignUpActivity::class.java )
             startActivity( intent )
+            finish()
         }
         binding.btnsignin.setOnClickListener {
             val intent = Intent( this, LoginActivity::class.java )
             startActivity( intent )
+            finish()
         }
     }
 

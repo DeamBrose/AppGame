@@ -7,6 +7,7 @@ import android.os.Bundle
 
 import edu.pe.idat.appgame.databinding.ActivitySignUpBinding
 import android.provider.MediaStore
+import android.view.View
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -44,6 +45,8 @@ class SignUpActivity : AppCompatActivity() {
         binding.tvopenGallery.setOnClickListener { OpenGallery() }
         binding.btnRegistrarSignup.setOnClickListener {
             if( ValidateData() ){
+                binding.progressBar5.visibility = View.VISIBLE
+                binding.btnRegistrarSignup.visibility = View.GONE
                 RegisterPhoto()
             }
         }
@@ -69,8 +72,16 @@ class SignUpActivity : AppCompatActivity() {
         )
         RegisterCorreo( email, password )
         database.collection( "Clients" )
-            .add( cliente ).addOnSuccessListener { toast( "Usuario Registrado." ) }
-            .addOnFailureListener { toast( "Error con el registro." ) }
+            .add( cliente ).addOnSuccessListener {
+                binding.progressBar5.visibility = View.GONE
+                binding.btnRegistrarSignup.visibility = View.VISIBLE
+                toast( "Usuario Registrado." )
+            }
+            .addOnFailureListener {
+                binding.progressBar5.visibility = View.GONE
+                binding.btnRegistrarSignup.visibility = View.VISIBLE
+                toast( "Error con el registro." )
+            }
     }
     private fun RegisterCorreo( email: String, password: String ){
         auth.createUserWithEmailAndPassword( email, password ).addOnCompleteListener {

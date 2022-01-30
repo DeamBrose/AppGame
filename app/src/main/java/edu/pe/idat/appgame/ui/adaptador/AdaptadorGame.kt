@@ -1,4 +1,4 @@
-package edu.pe.idat.appgame.adaptador
+package edu.pe.idat.appgame.ui.adaptador
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -10,6 +10,7 @@ import edu.pe.idat.appgame.R
 import edu.pe.idat.appgame.databinding.ItemCardGameBinding
 import edu.pe.idat.appgame.model.Game
 import edu.pe.idat.appgame.ui.GameDescripctionActivity
+import java.lang.Exception
 
 class AdaptadorGame(private val dataset: MutableList<Game>) :
 RecyclerView.Adapter<AdaptadorGame.ViewHolder>(){
@@ -20,9 +21,21 @@ RecyclerView.Adapter<AdaptadorGame.ViewHolder>(){
 
         fun enlazarGame( g:Game ){
             val vinculo = g.image
-
+            binding.txterror.visibility = View.GONE
             if ( vinculo.isNotEmpty() ){
-                Picasso.get().load(vinculo).into(binding.ivGameimgItemgame)
+                Picasso.get().load(vinculo).into(binding.ivGameimgItemgame, object: com.squareup.picasso.Callback{
+                    override fun onSuccess() {
+                        binding.progressBar3.visibility = View.GONE
+                        binding.txterror.visibility = View.GONE
+                    }
+
+                    override fun onError(e: Exception?) {
+                        binding.progressBar3.visibility = View.GONE
+                        binding.txterror.text = "No hay foto :("
+                        binding.txterror.visibility = View.VISIBLE
+
+                    }
+                } )
             }
             binding.tvNombreItemgame.text = g.name
             binding.tvEdicionItemgame.text = g.edition

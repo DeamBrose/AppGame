@@ -3,6 +3,7 @@ package edu.pe.idat.appgame.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import edu.pe.idat.appgame.preferences.SharedPreferences
 import edu.pe.idat.appgame.databinding.ActivitySplashBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -23,9 +24,23 @@ class SplashActivity : AppCompatActivity() {
     private fun Splash(){
         CoroutineScope( Dispatchers.Main ).launch {
             delay( 3000L )
-            val intent = Intent( this@SplashActivity, MainActivity::class.java )
-            startActivity( intent )
-            finish()
+
+            if( SharedPreferences.constantes.getCliente() == "ADMIN" ){
+                val intent = Intent( this@SplashActivity, NewGameActivity::class.java )
+                startActivity( intent )
+                finish()
+            }else if( SharedPreferences.constantes.getCliente() == "CLIENT" ){
+                val intent = Intent( this@SplashActivity, CatalogActivity::class.java )
+                startActivity( intent )
+                finish()
+            }else{
+                if( SharedPreferences.constantes.getCliente().isEmpty() ) {
+                    val intent = Intent(this@SplashActivity, MainActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+            }
+
         }
     }
 }
